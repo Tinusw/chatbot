@@ -20,6 +20,7 @@ gem 'rack-cors'
 gem 'pubnub'
 # Easily create text or voice based bots that humans can chat with on their preferred messaging platform.
 gem 'wit'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
