@@ -7,7 +7,9 @@ class WitExtension
   def initializer
     actions = {
       send: ->(request, response) {
-        # something when bot responds
+        PubnubExtension.instance.client.publish(message: response['text'], channel: @conversation.uid)
+        @conversation.messages.create(body: response['text'], kind: "outgoing")
+        puts("sending ... #{response['text']}")
       },
 
       findTheatre: ->(request) {
