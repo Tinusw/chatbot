@@ -6,11 +6,11 @@ class WitExtension
 
   def initializer
     actions = {
-      send: -> (request, response) {
+      send: ->(request, response) {
         # something when bot responds
       },
 
-      findTheatre: -> (request) {
+      findTheatre: ->(request) {
         context = request["context"]
         entities = request["entities"]
 
